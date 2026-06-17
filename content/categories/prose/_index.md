@@ -4,6 +4,6 @@ description: 抒情/回忆散文
 image:
 
 style:
-    background: "#2a9d8f"
+    background: "#457b9d"
     color: "#fff"
 ---
