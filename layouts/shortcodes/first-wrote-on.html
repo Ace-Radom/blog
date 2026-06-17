@@ -1,0 +1,10 @@
+{{ $rawDate := .Get 0 }}
+
+{{ if $rawDate }}
+    {{ $parsedDate := time.AsTime $rawDate }}
+    <p style="font-size: 1.4rem; color: #b2b2b2;">
+        first wrote on <time>{{ $parsedDate.Format "2006-01-02" }}</time>
+    </p>
+{{ else }}
+    <p style="color: red;">[shortcode err: `first-wrote-on` needs a date, e.g. '2006-01-02']</p>
+{{ end }}
