@@ -1,0 +1,12 @@
+<style>
+    .compact-inline-mode p {
+        margin-top: 0.25em !important;
+        margin-bottom: 0.25em !important; 
+    }
+    
+    .compact-inline-mode p:last-child {
+        margin-top: 0.25em !important;
+        margin-bottom: 0 !important;
+    }
+</style>
+<div class="compact-inline-mode">{{ .Inner | markdownify }}</div>

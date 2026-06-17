@@ -1,0 +1,11 @@
+{{ $original := .Get 0 }}
+{{ $translation := .Get 1 }}
+
+<div style="margin-bottom: 1rem;">
+    <div style="line-height: 1.3;">
+        {{- $original -}}
+    </div>
+    <div style="line-height: 1.3; font-size: 1.2rem; color: #8f8f8f; margin-top: 4px;">
+        {{- $translation -}}
+    </div>
+</div>
