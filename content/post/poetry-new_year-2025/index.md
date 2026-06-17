@@ -5,7 +5,7 @@ date: 2024-12-31 00:00:00+0000
 categories:
     - Poetry
 tags:
-    - 贺岁词
+    - 贺岁
 ---
 
 {{< flush-center >}}
