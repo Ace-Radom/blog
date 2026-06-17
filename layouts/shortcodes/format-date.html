@@ -1,0 +1,8 @@
+{{ $rawDate := .Get 0 }}
+
+{{ if $rawDate }}
+    {{- $parsedDate := time.AsTime $rawDate -}}
+    {{- $parsedDate.Format "2006-01-02" -}}
+{{ else }}
+    <p style="color: red;">[shortcode err: `format-date` needs a date, e.g. '2006-01-02']</p>
+{{ end }}
