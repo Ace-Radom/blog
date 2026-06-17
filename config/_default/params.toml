@@ -19,8 +19,9 @@ SortBy              = "default"
 
 [sidebar]
     emoji    = "🍥"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    avatar   = "img/avatar.png"
+    subtitle = "骐骥一跃 不能十步\n驽马十驾 功在不舍"
+    avatar   = "img/avatar.jpg"
+    compact  = false
 
 [article]
     headingAnchor = false
@@ -50,7 +51,7 @@ SortBy              = "default"
 
 ## Comments
 [comments]
-    enabled  = true
+    enabled  = false
     provider = "disqus"
 
     # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
