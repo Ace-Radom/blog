@@ -2,13 +2,140 @@
     You can add your own custom styles here.
 */
 
-.article-content p {
+.article-page .main-article .article-content p {
     line-height: 1.6;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-.site-description {
+.site-meta .site-description {
     white-space: pre-wrap;
     line-height: 1.6;
+}
+
+.article-page .main-article .article-content details {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    margin: 1.5rem 0;
+    transition: all 0.2s ease-in-out;
+
+    summary {
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        padding: 0.2rem 0;
+        color: var(--card-text-color);
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+    &[open] {
+        background-color: #f1f3f5;
+
+        summary {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
+        }
+    }
+
+    >*:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content details {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    &[open] {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        summary {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    }
+}
+
+@keyframes details-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.article-page .main-article .article-content details[open]>*:not(summary) {
+    animation: details-reveal 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.article-page .main-article .article-content details summary {
+    list-style: none;
+}
+
+.article-page .main-article .article-content details summary::-webkit-details-marker {
+    display: none;
+}
+
+.article-page .main-article .article-content details summary::before {
+    content: "▶";
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 0.6rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: transform 0.2s ease-in-out;
+}
+
+.article-page .main-article .article-content details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.article-page .main-article .article-content details .table-wrapper table {
+    background-color: transparent !important;
+}
+
+.article-page .main-article .article-content details .table-wrapper table tr {
+    background-color: var(--card-background) !important;
+}
+
+.article-page .main-article .article-content details .table-wrapper table tr:nth-child(2n) {
+    background-color: rgba(128, 128, 128, 0.01) !important;
+}
+
+.article-page .main-article .article-content details .table-wrapper table th {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content details .table-wrapper table tr {
+    background-color: var(--card-background) !important;
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content details .table-wrapper table tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content details .table-wrapper table th {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.article-page .main-article .article-content span[id^="eq-"] {
+    position: absolute !important;
+    margin-top: -5rem !important;
+
+    width: 0 !important;
+    height: 0 !important;
+    display: block !important;
+
+    visibility: hidden !important;
+    pointer-events: none !important;
 }

@@ -11,6 +11,11 @@
         block  = [['\[', '\]'], ['$$', '$$']]
         inline = [['\(', '\)']]
 
+    [goldmark.extensions.cjk]
+        enable = true
+        eastAsianLineBreaks = true
+        eastAsianLineBreaksStyle = "simple"
+
 [tableOfContents]
     endLevel   = 4
     ordered    = true
