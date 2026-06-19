@@ -1,0 +1,56 @@
+<style>
+    .article-page .main-article .article-content h2::before,
+    .article-page .main-article .article-content h3::before,
+    .article-page .main-article .article-content h4::before {
+        content: attr(data-heading-num) " ";
+        margin-right: 4px;
+        color: inherit;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const articleContent = document.querySelector('.article-page .main-article .article-content');
+        if (!articleContent) return;
+
+        const headings = articleContent.querySelectorAll('h2, h3, h4');
+        let counts = { h2: 0, h3: 0, h4: 0 };
+
+        headings.forEach(heading => {
+            let numStr = "";
+
+            if (heading.tagName === 'H2') {
+                counts.h2++;
+                counts.h3 = 0;
+                counts.h4 = 0;
+                numStr = `${counts.h2}.`;
+            }
+            else if (heading.tagName === 'H3') {
+                counts.h3++;
+                counts.h4 = 0;
+                numStr = `${counts.h2}.${counts.h3}`;
+            }
+            else if (heading.tagName === 'H4') {
+                counts.h4++;
+                numStr = `${counts.h2}.${counts.h3}.${counts.h4}`;
+            }
+
+            heading.setAttribute('data-heading-num', numStr);
+        });
+
+        const refLinks = document.querySelectorAll('.dynamic-ref-link');
+
+        // find section refs & render
+        refLinks.forEach(link => {
+            const targetId = link.getAttribute('data-target');
+            const targetEl = document.getElementById(targetId);
+
+            if (targetEl && targetEl.hasAttribute('data-heading-num')) {
+                link.innerText = `第 ${targetEl.getAttribute('data-heading-num').replace(/\.$/, "")} 节`;
+            } else {
+                link.innerText = "[section not found!]";
+                link.style.color = "red";
+            }
+        });
+    });
+</script>
