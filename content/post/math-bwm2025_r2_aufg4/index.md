@@ -1,7 +1,7 @@
 ---
 title: 解题笔记——德国联邦数竞2025年第二轮第四题
 description:
-date: 2026-06-17 00:00:00+0000
+date: 2026-06-19 00:00:00+0000
 categories:
     - Math
 tags:
