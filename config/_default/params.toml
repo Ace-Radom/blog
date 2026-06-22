@@ -51,8 +51,16 @@ SortBy              = "default"
 
 ## Comments
 [comments]
-    enabled  = false
-    provider = "disqus"
+    enabled  = true
+    provider = "remark42"
+
+    [comments.remark42]
+        host                    = "https://remark42.ace-radom.io"
+        site                    = "remark"
+        locale                  = "zh"
+        components              = ["embed", "last-comments"]
+        max_shown_comments      = 15
+        show_email_subscription = true
 
     # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
     # Copy the configurations you need from there and paste it here.
