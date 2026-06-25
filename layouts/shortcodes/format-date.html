@@ -1,4 +1,4 @@
-{{ $rawDate := .Get 0 }}
+{{- $rawDate := .Get 0 -}}
 
 {{ if $rawDate }}
     {{- $parsedDate := time.AsTime $rawDate -}}
