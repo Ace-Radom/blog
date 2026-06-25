@@ -4,5 +4,5 @@
         target = "content"
 
     [[module.mounts]]
-        source = "crypt"
+        source = "encrypted"
         target = "content/post"
