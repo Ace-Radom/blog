@@ -1,6 +1,34 @@
+# Hugo
 public
 resources
 .hugo_build.lock
 .DS_Store
 assets/jsconfig.json
+
+# VSCode
 *.code-workspace
+
+# Latex
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.dvi
+*.xdv
+*-converted-to.*
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.alg
+*.loa
