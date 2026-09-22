@@ -139,3 +139,107 @@
     visibility: hidden !important;
     pointer-events: none !important;
 }
+
+.article-page .main-article .article-content img[src*="tikz-"][src$=".svg"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    
+    display: block !important;
+    margin: 2.5rem auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content img[src*="tikz-"][src$=".svg"] {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.article-page .main-article .article-content .custom-alert {
+    padding: 0.25rem 0 0.25rem 1rem;
+    margin: 1.25rem 0;
+    border-left: 0.25em solid;
+    background-color: transparent;
+
+    &.alert-note {
+        border-left-color: #0969da;
+        .alert-header { color: #0969da; }
+    }
+
+    &.alert-tip {
+        border-left-color: #1a7f37;
+        .alert-header { color: #1a7f37; }
+    }
+
+    &.alert-important {
+        border-left-color: #8250df;
+        .alert-header { color: #8250df; }
+    }
+
+    &.alert-warning {
+        border-left-color: #9a6700;
+        .alert-header { color: #9a6700; }
+    }
+
+    &.alert-caution {
+        border-left-color: #cf222e;
+        .alert-header { color: #cf222e; }
+    }
+}
+
+.article-page .main-article .article-content .custom-alert .alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.article-page .main-article .article-content .custom-alert .alert-header .alert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-page .main-article .article-content .custom-alert .alert-body {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.article-page .main-article .article-content .custom-alert .alert-body p {
+    margin: 0;
+}
+
+.article-page .main-article .article-content .custom-alert .alert-body p + p {
+    margin-top: 0.5rem;
+}
+
+[data-scheme="dark"] .article-page .main-article .article-content .custom-alert {
+    &.alert-note {
+        border-left-color: #2f81f7;
+        .alert-header { color: #2f81f7; }
+    }
+
+    &.alert-tip {
+        border-left-color: #3fb950;
+        .alert-header { color: #3fb950; }
+    }
+
+    &.alert-important {
+        border-left-color: #a371f7;
+        .alert-header { color: #a371f7; }
+    }
+
+    &.alert-warning {
+        border-left-color: #d29922;
+        .alert-header { color: #d29922; }
+    }
+
+    &.alert-caution {
+        border-left-color: #f85149;
+        .alert-header { color: #f85149; }
+    }
+}
